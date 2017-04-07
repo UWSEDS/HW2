@@ -12,7 +12,7 @@ Homework 2 - Procedural Python
 | https://github.com/UWSEDS/LectureNotes/blob/master/open_data_year_two_set3.zip?raw=true | open_data_year_two_set3.zip | 2016_trip_data_set3.csv |
 
 3. In a separate set of cells, use lists, tuples, dictionaries, for loops, if statements, and whatever other tasty Python bits you want to run your code on the three files so that you don't replicate code. (1pt)
-4. Use the Markdown in the notebook to describe how using these features of Python made your code shorter, more easy to read, and easier to maintain. (1pt)
+4. Use a function for the whole code block that downloads the file if needed and creates a data frame and returns it.  Hint: use 'return df' to return the data frame. (1pt)
 5. Use the basic dataframe and matplotlib skills from last week to find out what is different between the files. (1pt)
 
 ### Grading rubric
