@@ -1,19 +1,57 @@
-# HW2
-Homework 2 - Procedural Python
+# HW2: Procedural Python
 
-### Assignment
-1. Create a new Jupyter notebook called 'SEDS-HW2.ipynb' and finish the in class excersize of creating a block of code to download the pronto data, unzip it and load it into a data frame in Python (not using %% bash magic!) so that it works for a single file. (1pt)
-2. Run the code you put together for the three files below.  Use Markdown between the set of cells to offset and explain your work. (1pt)
+**1. Create a function `check_email_validity` that takes a single argument, a text string, and returns a boolean value. Return true if a valid email, false else.**
 
-| URL | filename | csv_filename |
-|-----|----------|--------------|
-| https://github.com/UWSEDS/LectureNotes/blob/master/open_data_year_two_set1.zip?raw=true | open_data_year_two_set1.zip | 2016_trip_data_set1.csv |
-| https://github.com/UWSEDS/LectureNotes/blob/master/open_data_year_two_set2.zip?raw=true | open_data_year_two_set2.zip | 2016_trip_data_set2.csv |
-| https://github.com/UWSEDS/LectureNotes/blob/master/open_data_year_two_set3.zip?raw=true | open_data_year_two_set3.zip | 2016_trip_data_set3.csv |
+- [ ] Correct logic for email validity using Python string methods and/or lists (regular expressions, e.g. `re`, not allowed for this assignment) [2pts].
 
-3. In a separate set of cells, use lists, tuples, dictionaries, for loops, if statements, and whatever other tasty Python bits you want to run your code on the three files so that you don't replicate code. (1pt)
-4. Use a function for the whole code block that downloads the file if needed and creates a data frame and returns it.  Hint: use 'return df' to return the data frame. (1pt)
-5. Use the basic dataframe and matplotlib skills from last week to find out what is different between the files. (1pt)
+An email is a string (a subset of ASCII characters) separated into two parts by @ symbol. Let's call the first part *personal* and the latter part *domain*, i.e., personal@domain. The length of the personal part may be up to 64 characters long and domain name may be up to 253 characters.
 
-### Grading rubric
-Instructors will fill in.
+The personal and domain parts contains the following ASCII characters:
+
+- Uppercase (`A-Z`) and lowercase (`a-z`) English letters.
+- Digits (`0-9`).
+- Character `-` (dash).
+- Character `.` (period, dot or fullstop) provided that it is not the first or last character and it will not come one after the other.
+
+Additionally, the personal part can contain:
+
+- Characters `! # $ % & ' * + / = ? ^ _ { | } ~`
+
+Example of valid emails:
+
+    mysite@ourearth.com
+    my.ownsite@ourearth.org
+    mysite@you.me.net
+
+Example of invalid emails:
+
+    mysite.ourearth.com [@ is not present]
+    mysite@.com.my [domain can not start with dot "."]
+    @you.me.net [No character before @]
+    mysite123@gmail.b [".b" is not a valid tld]
+    mysite@.org.org [domain can not start with dot "."]
+    .mysite@mysite.org [an email should not be start with "."]
+    mysite()*@gmail.com [here the regular expression only allows character, digit, underscore, and dash]
+    mysite..1234@yahoo.com [double dots are not allowed]
+
+**2. Create a function `process_newsgroup_file` that takes two arguments, a file path string and a dictionary with words as keys and integers as values that does the following:**
+
+- [ ] remove special characters and punctuation (anything outside of A-Z, a-z, 0-9) from non-header lines [1pt]. This is a common preprocessing step for text processing.
+- [ ] increment the dictionary with word counts (words as keys and integers as values) based on what's contained in the non-header lines of the passed file [2pt]
+
+The header lines can start with the following: 
+
+The function should return a tuple with two elements:
+- [ ] the validated (using function from #1) email address after the 'From:' header [1pt]
+- [ ] number of lines that contain quotes (start with `>`, nested quotes still count as a single quote) [1pt]
+
+
+
+**3. For each file in the cryptography topic, run the `process_newsgroup_file` function and pass in the growing dictionary along with filenames.**
+
+Use the following code to get started:
+
+    word_list = {}
+
+    import glob
+    files = glob.glob("20_newsgroups/sci.crypt/*")
