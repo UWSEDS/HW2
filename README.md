@@ -2,6 +2,8 @@
 
 **0. Download the 20 Newsgroups dataset and unarchive/unzip the folder.**
 
+Dataset location: http://qwone.com/~jason/20Newsgroups/20news-19997.tar.gz
+
 **1. Create a function `check_email_validity` that takes a single argument, a text string, and returns a boolean value. Return true if a valid email, false else.**
 
 - [ ] Correct logic for email validity using Python string methods and/or lists (regular expressions, e.g. `re`, not allowed for this assignment) [2pts].
