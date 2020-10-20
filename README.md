@@ -1,5 +1,7 @@
 # HW2: Procedural Python
 
+**0. Download the 20 Newsgroups dataset and unarchive/unzip the folder.**
+
 **1. Create a function `check_email_validity` that takes a single argument, a text string, and returns a boolean value. Return true if a valid email, false else.**
 
 - [ ] Correct logic for email validity using Python string methods and/or lists (regular expressions, e.g. `re`, not allowed for this assignment) [2pts].
@@ -36,16 +38,13 @@ Example of invalid emails:
 
 **2. Create a function `process_newsgroup_file` that takes two arguments, a file path string and a dictionary with words as keys and integers as values that does the following:**
 
-- [ ] remove special characters and punctuation (anything outside of A-Z, a-z, 0-9) from non-header lines [1pt]. This is a common preprocessing step for text processing.
-- [ ] increment the dictionary with word counts (words as keys and integers as values) based on what's contained in the non-header lines of the passed file [2pt]
-
-The header lines can start with the following: 
-
 The function should return a tuple with two elements:
 - [ ] the validated (using function from #1) email address after the 'From:' header [1pt]
 - [ ] number of lines that contain quotes (start with `>`, nested quotes still count as a single quote) [1pt]
 
-
+The function should also perform the following:
+- [ ] remove special characters and punctuation (anything outside of A-Z, a-z, 0-9) from non-header lines. This is a common preprocessing step for text processing. [1pt]
+- [ ] increment the passed in dictionary with word counts (words as keys and integers as values) based on what's contained in the passed file [2pt]
 
 **3. For each file in the cryptography topic, run the `process_newsgroup_file` function and pass in the growing dictionary along with filenames.**
 
@@ -54,4 +53,4 @@ Use the following code to get started:
     word_list = {}
 
     import glob
-    files = glob.glob("20_newsgroups/sci.crypt/*")
+    files = glob.glob("20_newsgroups/sci.crypt/*")  # adjust filepath as needed
