@@ -26,16 +26,16 @@ Example of valid emails:
     mysite@ourearth.com
     my.ownsite@ourearth.org
     mysite@you.me.net
+    mysite123@gmail.b [This is valid, discussion in Canvas]
 
 Example of invalid emails:
 
     mysite.ourearth.com [@ is not present]
     mysite@.com.my [domain can not start with dot "."]
     @you.me.net [No character before @]
-    mysite123@gmail.b [".b" is not a valid tld]
     mysite@.org.org [domain can not start with dot "."]
-    .mysite@mysite.org [an email should not be start with "."]
-    mysite()*@gmail.com [here the regular expression only allows character, digit, underscore, and dash]
+    .mysite@mysite.org [Personal part can not start with "."]
+    mysite()*@gmail.com [Invalid due to parentheses in personal part, asterisk acceptable]
     mysite..1234@yahoo.com [double dots are not allowed]
 
 **2. Create a function `process_newsgroup_file` that takes two arguments, a file path string and a dictionary with words as keys and integers as values that does the following:**
