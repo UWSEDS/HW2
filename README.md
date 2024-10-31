@@ -8,11 +8,11 @@ To show that you completed the assigned levels, take a screen shot at the end of
 
 - add a screenshot showing that you've completed this sequence. `2pt`
 
-**1. Complete the Ramping Up Sequency.**
+**1. Complete the Ramping Up Sequence.**
 
 - add a screenshot showing that you've completed this sequence. `2pt`
 
-**2. Push & Pull -- Git Remotes!**
+**2. Complete the Push & Pull -- Git Remotes! Sequence.**
 
 Note that this sequence is under the Remote tab in the "Select a level" dialog box. You can always refresh the website to get back to the "Select a level" dialog box, you won't lose your work.
 
