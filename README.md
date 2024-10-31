@@ -18,3 +18,4 @@ Note that this sequence is under the Remote tab in the "Select a level" dialog b
 
 - add a screenshot showing that you've completed this sequence. `4pt`
 
+You're welcome to do any other levels and if you're really into it, see if you can do each level using the minimum number of commands.
